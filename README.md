@@ -66,6 +66,16 @@ app.commandLine.appendSwitch("ignore-gpu-blacklist");
 app.commandLine.appendSwitch("register-pepper-plugins", getPluginEntry(pluginDir));
 ```
 
+Don't forget to enable `plugins` feature when creating `BrowserWindow`:
+
+```javascript
+const win = new BrowserWindow({
+  // ...
+  webPreferences: {plugins: true},
+  // ...
+});
+```
+
 ### Use MPV component (React example)
 
 ```javascript
@@ -178,7 +188,7 @@ See [download](https://developer.chrome.com/native-client/sdk/download) page.
 
 ### Step 3: setup mpv development files
 
-* Windows: download [mpv-dev](https://mpv.srsfckn.biz/mpv-dev-latest.7z), unpack to `C:\mpv-dev`, rename `include` to `mpv`
+* Windows: download [mpv-dev](https://mpv.srsfckn.biz/mpv-dev-latest.7z), unpack to `C:\mpv-dev`
 * macOS: `brew install mpv`
 * Linux: `apt-get install libmpv-dev`
 
